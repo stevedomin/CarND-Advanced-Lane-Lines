@@ -68,8 +68,16 @@ The code for this step is contained in the code cells in the "Thresholding" sect
 
 I used a combination of color and gradient thresholds to generate a binary image.
 
-For the color thresholding I tried the HSV and HSL color space and ended up isolating the S channel in the HSL color space.
+For the color thresholding I tried the HSV and HSL color space and ended up isolating the yellow and white in the HSL color space.
 This is where I got the best result and both the white and yellow lines were crisp.
+
+I used the following threshold:
+
+    | Yellow | White
+----|-------|------
+H   | 20,45 | 0,255
+S   | 120,200 | 200,255
+L   | 80, 255 | 0, 255
 
 I also used the Sobel operator to find changes in color intensity in the image. The first step was to convert the image to grayscale.
 Then I applied multiple variants of the Sobel operator and combined that with the color thresholding to detect lanes in a robust way.
