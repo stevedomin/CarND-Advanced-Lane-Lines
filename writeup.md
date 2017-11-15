@@ -128,6 +128,8 @@ The code for this step is contained in the code cells in the "Pipeline" section 
 In order to calculate the curvature of the line we need to fit new polynomials to find x for y in the real world. This will make
 use of some predefined pixels to meters conversion values.
 
+If the polynomial of the left lane and the right lane are too far apart we discard them and used the smoothed polynomials over the last 6 frames.
+
 After that we are able to compute the radius of the curvature in real world space using this two statements:
 
 ```python
